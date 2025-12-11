@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Accent: Mint-Cyan */
+    --primary: #00ffc6;
+    --primary-dim: #00d4a3;
+    --primary-hover: #33ffd4;
+
+    /* Secondary Accent: Soft Purple */
+    --secondary: #a78bfa;
+    --secondary-bright: #c4b5fd;
+    --secondary-dim: #8b5cf6;
+
+    /* Backgrounds */
+    --bg-primary: #0a0a0f;
+    --bg-secondary: #111118;
+    --bg-tertiary: #18181f;
+    --bg-elevated: #1f1f28;
+
+    /* Text */
+    --text-primary: #f4f4f5;
+    --text-secondary: #a1a1aa;
+    --text-muted: #71717a;
+    --text-inverse: #0a0a0f;
+
+    /* Borders */
+    --border-subtle: #27272a;
+    --border-default: #3f3f46;
+    --border-accent: #00ffc6;
+
+    /* Shadows */
+    --shadow-glow: 0 0 20px rgba(0, 255, 198, 0.3);
+    --shadow-glow-lg: 0 0 30px rgba(0, 255, 198, 0.4);
+    --shadow-glow-purple: 0 0 20px rgba(167, 139, 250, 0.25);
+
+    /* Animation */
+    --ease-default: cubic-bezier(0.4, 0, 0.2, 1);
+    --duration-fast: 200ms;
+    --duration-normal: 300ms;
+    --duration-slow: 400ms;
+  }
+
+  /* Base styles */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary antialiased;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Focus visible - accessibility */
+  *:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-bg-primary;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Container */
+  .container-main {
+    @apply max-w-7xl mx-auto px-6 sm:px-8 lg:px-12;
+  }
+
+  /* Section spacing */
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  /* Card base */
+  .card-base {
+    @apply p-6 rounded-lg bg-bg-secondary border border-border-subtle
+           transition-all duration-300;
+  }
+
+  .card-interactive {
+    @apply card-base hover:border-primary cursor-pointer
+           hover:shadow-[0_0_30px_rgba(0,255,198,0.15)];
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+
+  /* Button glow effect */
+  .btn-glow {
+    @apply hover:shadow-[0_0_30px_rgba(0,255,198,0.4)]
+           transition-shadow duration-200;
+  }
+}
+
+@layer utilities {
+  /* Custom scrollbar */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Text balance for better headings */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* Animated gradient for hero text */
+  @keyframes gradient-shift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    animation: gradient-shift 3s ease infinite;
+  }
+}
+
+/* Cal.com Modal Overlay Customization */
+/* Ensures modal appears as overlay with website visible behind */
+[class*='cal-modal-backdrop'] {
+  background: rgba(10, 10, 15, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+[class*='cal-modal-container'] {
+  border-radius: 12px !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6),
+              0 0 40px rgba(0, 255, 198, 0.15) !important;
+}
+
