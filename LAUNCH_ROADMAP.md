@@ -2,7 +2,8 @@
 
 **Last 10% to Ship: Technical, Content, Business**
 
-> **Current Status:** 90% done. Site is functional, messaging is strong, design is clean.  
+> **Current Status:** 95% done. Site deployed to Vercel, pre-qual form tested and working!  
+> **Recent Progress:** ✅ Deployed to Vercel | ✅ Pre-qual form tested (Great Fit, Partial Fit, Not a Fit scenarios all working)  
 > **Goal:** Handle the final high-impact details that convert visitors into clients.
 
 ---
@@ -21,7 +22,7 @@
 
 ## 📋 TECHNICAL WORK: ✅ COMPLETE
 
-### ✅ **Pre-Qualification Form - BUILT**
+### ✅ **Pre-Qualification Form - BUILT & TESTED**
 
 **What was built:**
 
@@ -30,6 +31,15 @@
 - Custom hook for form state management
 - Pure function scoring logic
 - Three result states: Great Fit / Possible Fit / Not a Fit
+
+**Testing Results (Dec 11, 2024):**
+
+- ✅ **Great Fit scenario** - High budget + good timeline → Shows Cal.com booking button
+- ✅ **Partial Fit scenario** - Mixed criteria (some good, some bad) → Shows "Possible Fit" with options
+- ✅ **Not a Fit scenario** - Low budget or poor fit → Shows alternatives with email option
+- ✅ All scoring logic working correctly
+- ✅ Form validation working
+- ✅ UI/UX smooth and clear
 
 **How it works:**
 
@@ -431,35 +441,35 @@ If examples → You need to decide:
 
 ---
 
-### 🚀 **Deployment (Vercel)**
+### 🚀 **Deployment (Vercel)** - ✅ COMPLETE
 
-**Current State:** Running locally (`npm run dev`)
+**Current State:** ✅ Deployed to Vercel (live on temporary domain)
 
-**To Deploy:**
+**Completed:**
 
-1. **Create Vercel Account**
-   - Sign up with GitHub
-   - Free tier: Perfect for this site
-   - Includes: SSL, CDN, analytics
+1. ✅ **Vercel Account Created**
+   - Signed up with GitHub
+   - Free tier deployed
+   - SSL, CDN, analytics enabled
 
-2. **Connect GitHub Repo**
-   - Push code to GitHub (private or public)
-   - Import to Vercel
-   - Auto-deploys on push
+2. ✅ **GitHub Repo Connected**
+   - Code pushed to GitHub
+   - Imported to Vercel
+   - Auto-deploys on push configured
 
 3. **Environment Variables** (if needed)
-   - OpenAI API key (for AI product-fit tool)
-   - Cal.com event link
+   - OpenAI API key (for AI product-fit tool) - TBD
+   - Cal.com event link - Already configured
    - Any other secrets
 
-4. **Custom Domain**
+4. **Custom Domain** - TODO
    - Add domain in Vercel settings
    - Update DNS (Vercel gives you nameservers)
    - SSL auto-configured
 
-**Cost:** FREE (Vercel hobby plan is perfect)
+**Cost:** FREE (Vercel hobby plan)
 
-**Time:** 30 minutes
+**Time:** ✅ Completed
 
 ---
 
@@ -517,27 +527,28 @@ If examples → You need to decide:
 
 **Upgrade later:** Google Workspace ($6/month) when you want to send FROM domain
 
-#### **Step 3: Deploy to Vercel** (30 min)
+#### **Step 3: Deploy to Vercel** - ✅ COMPLETE (30 min)
 
 **Steps:**
 
-1. Push code to GitHub (private or public)
-2. Import to Vercel (free account)
-3. Connect custom domain
-4. Deploy (automatic)
-5. SSL auto-configured
+1. ✅ Push code to GitHub (private or public)
+2. ✅ Import to Vercel (free account)
+3. [ ] Connect custom domain (TODO)
+4. ✅ Deploy (automatic)
+5. ✅ SSL auto-configured
 
 **Environment variables needed:** None (client-side only, no API keys)
 
 **Cost:** FREE (Vercel Hobby plan)
 
-#### **Step 4: Test Live Site** (30 min)
+#### **Step 4: Test Live Site** - ✅ COMPLETE (30 min)
 
-- [ ] Visit all pages (/, /how-we-build, /pricing, /projects, /book-call)
-- [ ] Test pre-qual form with different inputs
-- [ ] Test "Great Fit" flow → Cal.com opens
-- [ ] Test "Not a Fit" flow → Email option shown
-- [ ] Test on mobile (responsive)
+- ✅ Visit all pages (/, /how-we-build, /pricing, /projects, /book-call)
+- ✅ Test pre-qual form with different inputs
+- ✅ Test "Great Fit" flow → Cal.com opens (works correctly)
+- ✅ Test "Partial Fit" flow → Mixed criteria (works correctly)
+- ✅ Test "Not a Fit" flow → Email option shown (works correctly)
+- [ ] Test on mobile (responsive) - TODO
 - [ ] Test all "Book Call" buttons redirect to /book-call
 
 ---
@@ -702,10 +713,11 @@ Timeline Weights:
 
 ### **Immediate (Before Launch):**
 
-1. **Test the pre-qual form manually** (15 min)
-   - Go to localhost:3000/book-call
-   - Test "Great Fit" path (budget $15k-30k, timeline ASAP)
-   - Test "Not a Fit" path (budget under $8k, timeline exploring)
+1. ✅ **Test the pre-qual form manually** - COMPLETE (15 min)
+   - ✅ Tested on Vercel deployment
+   - ✅ Test "Great Fit" path (budget $15k-30k, timeline ASAP) - Works!
+   - ✅ Test "Partial Fit" path (mixed good/bad criteria) - Works!
+   - ✅ Test "Not a Fit" path (budget under $8k, timeline exploring) - Works!
    - Verify language sounds good
    - Check mobile responsive
 
@@ -738,17 +750,17 @@ Timeline Weights:
 
 - [x] Build passes (`npm run build`)
 - [x] All pages load correctly
-- [ ] Manual test of /book-call form
+- [x] Manual test of /book-call form - ✅ Tested all scenarios!
 - [ ] Domain purchased
-- [ ] GitHub repo created
-- [ ] Vercel account setup
+- [x] GitHub repo created
+- [x] Vercel account setup
 
 **After deploying:**
 
-- [ ] Custom domain connected
-- [ ] SSL verified (auto by Vercel)
-- [ ] Test live site on mobile
-- [ ] Share link to get feedback
+- [ ] Custom domain connected - TODO (waiting on domain)
+- [x] SSL verified (auto by Vercel)
+- [ ] Test live site on mobile - TODO
+- [ ] Share link to get feedback - TODO
 
 ---
 
@@ -756,9 +768,9 @@ Timeline Weights:
 
 **Site is "launched" when:**
 
-- ✅ Deployed to custom domain
+- ⏳ Deployed to custom domain (on Vercel, needs custom domain)
 - ✅ All pages accessible
-- ✅ Pre-qual form works end-to-end
+- ✅ Pre-qual form works end-to-end (tested all scenarios)
 - ✅ Cal.com booking works for qualified leads
 
 **Site is "successful" when:**
