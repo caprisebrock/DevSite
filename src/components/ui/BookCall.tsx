@@ -1,8 +1,8 @@
 'use client'
 
 import { type ReactNode } from 'react'
+import Link from 'next/link'
 import { Button } from './Button'
-import { openCalModal } from '@/lib/integrations/cal'
 
 interface BookCallProps {
   variant?: 'primary' | 'secondary' | 'ghost' | 'purple'
@@ -12,12 +12,12 @@ interface BookCallProps {
 }
 
 /**
- * BookCall - Opens Cal.com booking modal for strategy calls
- * Cal.com is preloaded in CalProvider, so this opens instantly
+ * BookCall - Links to pre-qualification form before Cal.com booking
+ * Filters leads and ensures good fit before scheduling
  *
  * @example
  * <BookCall variant="primary" size="lg">
- *   Book $150 Strategy Call
+ *   Book Free Discovery Call
  * </BookCall>
  */
 export const BookCall = ({
@@ -27,14 +27,15 @@ export const BookCall = ({
   className,
 }: BookCallProps) => {
   return (
-    <Button
-      variant={variant}
-      size={size}
-      onClick={openCalModal}
-      className={className}
-    >
-      {children}
-    </Button>
+    <Link href="/book-call">
+      <Button
+        variant={variant}
+        size={size}
+        className={className}
+      >
+        {children}
+      </Button>
+    </Link>
   )
 }
 

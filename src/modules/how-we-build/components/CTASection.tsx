@@ -30,8 +30,8 @@ export const CTASection = () => {
 
           {/* Subheadline */}
           <p className="text-lg md:text-xl text-text-secondary mb-12 max-w-2xl mx-auto">
-            Free discovery call. No pressure. We'll discuss your idea, give you an 
-            honest timeline and quote, and see if we're a fit.
+            Free discovery call. No pressure. We&apos;ll discuss your idea, give you an 
+            honest timeline and quote, and see if we&apos;re a fit.
           </p>
 
           {/* CTAs */}

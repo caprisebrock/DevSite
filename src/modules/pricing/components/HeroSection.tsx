@@ -64,7 +64,7 @@ export const HeroSection = () => {
             className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-8 leading-relaxed"
           >
             We build fast. But projects take time for other reasons — discovery, 
-            iteration, integrations, testing. Here's the honest breakdown.
+            iteration, integrations, testing. Here&apos;s the honest breakdown.
           </motion.p>
 
           {/* Trust signals */}

@@ -24,7 +24,7 @@ export const ProofSection = () => {
             See It in Action
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            Real builds, real timelines, real code. Here's proof this actually works.
+            Real builds, real timelines, real code. Here&apos;s proof this actually works.
           </p>
         </motion.div>
 
@@ -82,8 +82,8 @@ export const ProofSection = () => {
                 Clean Architecture Deep Dive
               </h3>
               <p className="text-text-secondary text-sm mb-4">
-                Browse actual codebases we've built. See the folder structure, 
-                component patterns, and why it's production-ready.
+                Browse actual codebases we&apos;ve built. See the folder structure, 
+                component patterns, and why it&apos;s production-ready.
               </p>
               <Button variant="ghost" size="sm" className="group/btn">
                 <span>View Code</span>
@@ -110,7 +110,7 @@ export const ProofSection = () => {
               <div className="flex items-start gap-4">
                 <div className="w-2 h-2 rounded-full bg-primary mt-2 flex-shrink-0" />
                 <div>
-                  <span className="font-semibold text-text-primary">This site you're on?</span> 
+                  <span className="font-semibold text-text-primary">This site you&apos;re on?</span> 
                   {' '}Built in 2-3 hours using multi-agent orchestration. Production-ready homepage, 
                   navigation, animations, mobile-responsive. Would quote $5k-10k traditionally.
                 </div>

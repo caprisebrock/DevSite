@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { MessageSquare, FileText, Zap, Eye, Rocket, HeadphonesIcon } from 'lucide-react'
+import { MessageSquare, FileText, Eye, Rocket, HeadphonesIcon } from 'lucide-react'
 
 const steps = [
   {
@@ -55,7 +55,7 @@ export const ProcessSection = () => {
             The Day One Process
           </h2>
           <p className="text-lg text-text-secondary max-w-3xl mx-auto">
-            From idea to deployed app in 7-14 days (typical). Here's exactly what happens.
+            From idea to deployed app in 7-14 days (typical). Here&apos;s exactly what happens.
           </p>
         </motion.div>
 

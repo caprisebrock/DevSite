@@ -83,7 +83,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto mb-12 leading-relaxed"
           >
-            We orchestrate AI agents to build production-ready software in 7-14 days.
+            We orchestrate AI agents to build production-ready software in 1-4 weeks.
             Same clean architecture agencies take months to deliver —{' '}
             <span className="text-primary font-semibold">just 10x faster</span>.
           </motion.p>
@@ -115,7 +115,7 @@ export const HeroSection = () => {
           >
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary" />
-              <span>7-14 day delivery</span>
+              <span>1-4 week delivery</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 rounded-full bg-primary" />
