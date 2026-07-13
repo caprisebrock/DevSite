@@ -22,7 +22,7 @@ const faqs = [
       'Pricing is milestone-based. After intake, we scope the first deliverable clearly and quote that milestone. Additional layers (payments, observability, compliance, enterprise integration) are added only when needed.',
   },
   {
-    question: 'What does production-ready mean for you?',
+    question: 'What does release-ready mean for you?',
     answer:
       'Readable structure, passing TypeScript/lint/build checks, stable deployment flow, and validation of auth, error handling, and integration behavior before release.',
   },

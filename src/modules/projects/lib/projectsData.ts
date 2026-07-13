@@ -59,7 +59,7 @@ export const projects: Project[] = [
       'In-app 1:1 messaging between deal participants with Supabase realtime subscriptions',
       'Per-deal email inboxes via Postmark inbound webhooks for capturing deal-related correspondence',
       'Real-time notification center (global + deal-scoped) with bell dropdown in app chrome',
-      'Lighthouse cross-app API bridge: OAuth-style tokens let satellite tools (Bond Generator, Muni Clerk) pull published term sheet data securely',
+      'Lighthouse cross-app API bridge: OAuth-style tokens let satellite tools (Bond Generator, Muni Clerk) pull published term sheet data with scoped access controls',
     ],
     techStack: [
       'Next.js 16',
@@ -557,7 +557,7 @@ export const projects: Project[] = [
     subtitle: 'Modular Local Business Website System',
     category: 'Local Business',
     description:
-      'Three production-ready local service business websites — plumbing, landscaping, and tree service — built from a single reusable component base. Each site has industry-specific copy, service pages, lead capture forms, customer reviews, FAQ sections, and mobile-optimized call-to-action flows.',
+      'Three release-ready local service business websites — plumbing, landscaping, and tree service — built from a single reusable component base. Each site has industry-specific copy, service pages, lead capture forms, customer reviews, FAQ sections, and mobile-optimized call-to-action flows.',
     challenge:
       'Local service businesses need professional websites quickly at prices that make sense for a plumber or landscaper. Most agencies charge too much or deliver template-looking results. This proves production-quality local business sites can be built rapidly and replicated across verticals.',
     solution: [

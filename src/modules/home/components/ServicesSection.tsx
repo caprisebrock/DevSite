@@ -42,7 +42,7 @@ const services = [
     icon: FileText,
     title: 'Document Automation',
     description:
-      "Systems that process, transform, generate, or review documents at scale. We've built DOCX parsers, AI extraction workflows, certificate generators, and legal document tools.",
+      "Systems that process, transform, generate, or review documents in structured workflows. We've built DOCX parsers, AI extraction workflows, certificate generators, and legal document tools.",
     examples: [
       'DOCX parsing + replacement',
       'PDF generation',
