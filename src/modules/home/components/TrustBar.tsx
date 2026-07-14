@@ -23,7 +23,7 @@ export const TrustBar = () => {
     <section className="py-12 border-y border-border-subtle bg-bg-secondary/50">
       <div className="container-main">
         <p className="text-center text-xs font-semibold text-text-muted uppercase tracking-widest mb-6">
-          Technologies We Use in Production
+          Technologies Used Across Selected Projects
         </p>
 
         {/* Marquee — pure CSS, compositor thread only, zero JS */}

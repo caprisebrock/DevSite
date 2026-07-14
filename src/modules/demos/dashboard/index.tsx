@@ -30,7 +30,8 @@ export const DashboardDemo = () => {
                 Real-Time Analytics
               </h1>
               <p className="text-sm text-text-muted mt-1">
-                Live-updating dashboard • Built in 3 hours with Day One Labs
+                Simulated live-updating dashboard • UI demo built with Day One
+                Devs
               </p>
             </div>
             <div className="hidden md:flex items-center gap-2 px-3 py-2 rounded-full bg-bg-secondary border border-border-subtle">
@@ -92,10 +93,10 @@ export const DashboardDemo = () => {
           className="mt-12 p-6 rounded-xl bg-bg-secondary border border-border-subtle"
         >
           <h3 className="text-lg font-semibold text-text-primary mb-3">
-            🚀 This Demo Built in 3 Hours
+            About This Demo
           </h3>
           <div className="space-y-2 text-text-secondary">
-            <p>✅ Real-time data updates (simulated with random values)</p>
+            <p>✅ Simulated real-time data updates (not live production metrics)</p>
             <p>✅ Responsive design (works on mobile, tablet, desktop)</p>
             <p>✅ Smooth animations with Framer Motion</p>
             <p>✅ No backend required (client-side only)</p>

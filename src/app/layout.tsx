@@ -23,11 +23,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://dayonedevs.com'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Day One Devs - Full-Stack Apps That Ship',
+    default: 'Day One Devs - Full-Stack Product Engineering',
     template: '%s | Day One Devs',
   },
   description:
-    'We build and repair full-stack apps for founders and teams: MVPs, fragile codebase stabilization, and production deploys with Next.js, TypeScript, Supabase, Vercel, and Stripe.',
+    'Full-stack product engineering for workflow-heavy apps: AI systems, document automation, SaaS platforms, and codebase stabilization with Next.js, TypeScript, Supabase, and Vercel.',
   keywords: [
     'full-stack development',
     'MVP development',
@@ -35,6 +35,8 @@ export const metadata: Metadata = {
     'Supabase developer',
     'Vercel deployment',
     'Stripe integration',
+    'workflow systems',
+    'document automation',
   ],
   openGraph: {
     type: 'website',
@@ -91,11 +93,16 @@ export default function RootLayout({
               logo: `${siteUrl}/dayonelogo-transparent.png`,
               url: siteUrl,
               description:
-                'Full-stack development agency specializing in MVPs, SaaS platforms, AI workflow systems, and codebase stabilization.',
-              sameAs: ['https://www.upwork.com/agencies/dayonedevs'],
+                'Full-stack product engineering for workflow-heavy applications: AI systems, document automation, SaaS platforms, and codebase stabilization.',
+              sameAs: [
+                'https://www.upwork.com/agencies/dayonedevs',
+                'https://github.com/JahacksV1',
+                'https://www.linkedin.com/in/jahamiel-douglas-a63b50343/',
+              ],
               offers: {
                 '@type': 'Offer',
-                description: 'Custom software development — MVPs, internal tools, AI integrations, SaaS platforms.',
+                description:
+                  'Custom software development — MVPs, internal tools, AI workflows, document automation, and SaaS platforms.',
               },
             }),
           }}

@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { CONTACT_EMAIL, SITE_LOGO, SITE_NAME } from '@/lib/constants'
+import { CONTACT_EMAIL, SITE_LOGO, SITE_NAME, SOCIAL_LINKS } from '@/lib/constants'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Mail, Linkedin, Github, Twitter } from 'lucide-react'
@@ -14,14 +14,15 @@ export const Footer = () => {
 
   const contact = {
     email: CONTACT_EMAIL,
-    linkedin: '',
-    github: '',
-    twitter: '',
+    linkedin: SOCIAL_LINKS.linkedin,
+    github: SOCIAL_LINKS.github,
+    twitter: SOCIAL_LINKS.twitter,
   }
 
   const quickLinks = [
     { label: 'Portfolio', href: '/' },
     { label: 'Projects', href: '/projects' },
+    { label: 'Resume', href: '/resume' },
     { label: 'How We Build', href: '/how-we-build' },
     { label: 'Pricing', href: '/pricing' },
   ]
@@ -51,8 +52,8 @@ export const Footer = () => {
                   {SITE_NAME}
                 </h3>
                 <p className="text-sm text-text-secondary leading-relaxed">
-                  Full-stack apps that ship, from MVP builds to codebase
-                  stabilization and production handoff.
+                  Workflow-heavy full-stack software — AI systems, document
+                  automation, SaaS platforms, and maintainable handoffs.
                 </p>
               </div>
             </div>

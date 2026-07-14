@@ -19,14 +19,16 @@ const ProjectsPage = () => {
         <div className="container-main">
           <div className="text-center mb-16">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-              <span className="block text-text-primary mb-2">Built Fast.</span>
+              <span className="block text-text-primary mb-2">
+                Workflow Systems.
+              </span>
               <span className="block bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                Built Right.
+                Clear Engineering Boundaries.
               </span>
             </h1>
             <p className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">
-              Real projects, real timelines, real results. See how we turn ideas
-              into deployed apps in days.
+              Selected technical projects with architecture notes, status labels,
+              and evidence-backed descriptions — not inflated delivery claims.
             </p>
           </div>
 

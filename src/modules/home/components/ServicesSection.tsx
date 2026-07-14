@@ -29,10 +29,10 @@ const services = [
     icon: LayoutDashboard,
     title: 'MVPs & SaaS Platforms',
     description:
-      'Full-stack SaaS products with auth, database, billing, and a working UI. Designed for founders who need a functional product to show investors or early customers, not a mockup.',
+      'Full-stack SaaS products with auth, database, billing architecture, and a working UI — scoped to launchable milestones, not mockups.',
     examples: [
       'Multi-tenant SaaS',
-      'Stripe billing',
+      'Stripe billing architecture',
       'Supabase backend',
       'Dashboard + analytics',
     ],
@@ -42,9 +42,9 @@ const services = [
     icon: FileText,
     title: 'Document Automation',
     description:
-      "Systems that process, transform, generate, or review documents in structured workflows. We've built DOCX parsers, AI extraction workflows, certificate generators, and legal document tools.",
+      'Systems that process, transform, generate, or review documents. Built DOCX review workflows, certificate generators, and legal document tools — deterministic where correctness matters.',
     examples: [
-      'DOCX parsing + replacement',
+      'Deterministic DOCX review',
       'PDF generation',
       'Template-based assembly',
       'Audit trail logging',
@@ -107,8 +107,8 @@ export const ServicesSection = () => {
             What We Build
           </h2>
           <p className="text-lg text-text-secondary max-w-2xl mx-auto">
-            We work across these six categories. Each one is backed by shipped
-            code you can inspect.
+            We work across these six categories. Each one is backed by selected
+            projects you can review.
           </p>
         </motion.div>
 

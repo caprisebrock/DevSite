@@ -43,12 +43,12 @@ export const projects: Project[] = [
     id: 'muniflow-platform',
     slug: 'muniflow-platform',
     title: 'MuniFlow Platform',
-    subtitle: 'Municipal Bond Deal Execution Platform — An App Full of Apps',
-    category: 'Enterprise',
+    subtitle: 'Municipal Finance Workflow and Transaction Platform',
+    category: 'Fintech',
     description:
-      'A modular enterprise platform for managing municipal bond transactions end-to-end. Organized as a host app containing 22 feature modules — each a distinct workflow: deal creation, contacts and team management, collaborative term sheets with version history, closing document assembly, in-app messaging, a real-time notification system, a per-deal email inbox, and an interactive US issuers directory with geographic drill-down.',
+      'A modular platform for managing municipal bond transactions end-to-end. Organized as a host app with feature modules for deal creation, contacts and team management, collaborative term sheets with version history, closing document assembly, in-app messaging, notifications, a per-deal email inbox, and an interactive US issuers directory with geographic drill-down.',
     challenge:
-      'Municipal bond deals involve dozens of parties — bond counsel, underwriters, trustees, fiscal agents, issuers — coordinating across fragmented email threads, Word documents, and spreadsheets. Each deal is legally distinct, requires versioned documentation, and involves sensitive financial data. The platform needed to feel like a product, not a collection of admin screens, while enforcing the strict access control and audit requirements of public finance.',
+      'Municipal bond deals involve dozens of parties — bond counsel, underwriters, trustees, fiscal agents, issuers — coordinating across fragmented email threads, Word documents, and spreadsheets. Each deal is legally distinct, requires versioned documentation, and involves sensitive financial data. The platform needed to feel like a product, not a collection of admin screens, while enforcing strict access control and audit-oriented workflow boundaries.',
     solution: [
       'Home workspace with deal hierarchy grouped by issuer, type, or recency — with a 5-section progressive deal creation wizard',
       'Interactive US issuers map with national → state → county drill-down, search, and issuer group rooms',
@@ -58,8 +58,8 @@ export const projects: Project[] = [
       'Closing transcript assembly workspace with section/item reordering, document linking, and a register of closing events',
       'In-app 1:1 messaging between deal participants with Supabase realtime subscriptions',
       'Per-deal email inboxes via Postmark inbound webhooks for capturing deal-related correspondence',
-      'Real-time notification center (global + deal-scoped) with bell dropdown in app chrome',
-      'Lighthouse cross-app API bridge: OAuth-style tokens let satellite tools (Bond Generator, Muni Clerk) pull published term sheet data with scoped access controls',
+      'Notification center (global + deal-scoped) with preference-aware controls',
+      'Lighthouse cross-app API bridge: OAuth-style tokens let satellite tools (Bond Generator, Muni Clerk) pull published term sheet data securely',
     ],
     techStack: [
       'Next.js 16',
@@ -78,7 +78,7 @@ export const projects: Project[] = [
       {
         name: 'Next.js 16 (Pages Router)',
         purpose:
-          'Monolith host for ~107 API routes and 22 UI modules; feature flags in env control which surfaces are active',
+          'Monolith host for ~100+ API routes and 22 UI modules; feature flags in env control which surfaces are enabled',
       },
       {
         name: 'TanStack React Query 5',
@@ -108,7 +108,7 @@ export const projects: Project[] = [
       {
         name: 'OpenAI',
         purpose:
-          'Document list parsing pipeline for closing indexes; fine-tuning pipeline for municipal-domain model improvements (feature-flagged, in development)',
+          'Optional document list parsing for closing indexes; fine-tuning pipeline for municipal-domain model work (feature-flagged, in development)',
       },
       {
         name: 'ESLint boundaries + Vitest + Playwright',
@@ -121,7 +121,7 @@ export const projects: Project[] = [
       'Deal context rules engine: a catalog of municipal finance "knobs" (financing type, rate mode, tax status, maturity structure) that deterministically activates the correct term sheet field set per deal family',
       'Lighthouse cross-app bridge: OAuth-style authorization codes let external tools (Bond Generator, Muni Clerk) fetch published term sheet data from the platform without sharing database credentials',
       'Term sheet version diff: side-by-side comparison of any two published versions with a "show only changes" toggle — modeled after code review for financial documents',
-      'Feature passport system: each of 22 modules has a living passport.md tracking stage, maturity, API completeness, and known gaps — used to gate what ships per release',
+      'Feature passport system: each module has a living passport.md tracking stage, maturity, API completeness, and known gaps — used to gate what ships per release',
     ],
     architectureHighlights: [
       'Modular monolith with ESLint boundaries enforcing a 5-layer clean architecture per feature — prevents components from reaching the database and hooks from bypassing service logic',
@@ -131,7 +131,7 @@ export const projects: Project[] = [
       'Bundle splitting by feature module: webpack splitChunks creates separate chunks for auth, deal pages, term sheet, closing assembly — public auth pages skip React Query and MUI for ~190KB savings',
     ],
     relevantFor: [
-      'Enterprise SaaS and multi-tenant platform architecture',
+      'Multi-tenant SaaS and workflow platform architecture',
       'Legal and financial document workflows',
       'Collaborative editing with versioning and audit trails',
       'Complex data modeling with enforced module boundaries',
@@ -139,7 +139,7 @@ export const projects: Project[] = [
       'Multi-role invite and team management systems',
     ],
     results:
-      'Production platform with 22 active feature modules, 107 API endpoints, and a 59-table schema supporting the full municipal bond deal lifecycle. Demonstrates full-stack enterprise architecture at a scale that most agency portfolios never reach.',
+      'Built modular workflow capabilities across a codebase with 22 feature modules, ~100+ API routes, and a 59-table schema — covering deal setup, context-driven term sheets, notifications, external access, authorization, integrations, and migration from legacy rules to a catalog-driven model. Module maturity varies; feature passports track what is ready to ship.',
     demoStatus: 'Private — Case Study Only',
     screenshots: [
       '/projects/muniflow-01-sign-in.png',
@@ -161,28 +161,28 @@ export const projects: Project[] = [
     id: 'muni-clerk',
     slug: 'muni-clerk',
     title: 'Muni Clerk',
-    subtitle: 'AI Document Processing for Municipal Bond Resolutions',
+    subtitle: 'Deterministic Document Review for Municipal Bond Resolutions',
     category: 'Internal Tool',
     description:
-      'A specialized document intelligence tool that processes municipal bond resolution documents, detects every variable that needs updating for a new deal, and walks the user through confirming replacements with a full audit trail. Eliminates hours of error-prone manual find-and-replace in legal documents.',
+      'A document-review workflow for municipal bond resolutions that detects candidate values, presents each occurrence in context, and requires user confirmation before applying changes. The system preserves history, supports resumed work, and keeps document edits traceable without relying on generative rewriting.',
     challenge:
       'Bond counsel reuse resolution templates across deals, manually updating dozens of fields — dates, amounts, party names, bond series — in Word documents. One missed field creates a compliance problem. The process was entirely manual with no verification layer.',
     solution: [
-      '.docx upload with server-side parsing via eigenpal/docx-js-editor',
-      'Deterministic regex-based variable detection across 20+ field categories',
-      'ProseMirror-powered workspace for in-document replacement review',
+      'DOCX upload into an editor-native review workspace (ProseMirror via eigenpal/docx-js-editor)',
+      'Deterministic regex-based variable detection across typed field categories',
       'Occurrence preview — see every instance of a variable before confirming a replacement',
+      'Right-to-left transactional replacements with position remapping after edits',
       'Change log tracking confirmed vs. skipped replacements per session',
       'Saved documents and folder organization via Supabase',
-      'Anonymous session support — no signup required for first use',
-      'Lighthouse API bridge for pulling deal data directly into detected fields',
+      'Anonymous session support — try the tool before creating an account',
+      'Lighthouse API bridge for pulling authorized deal term-sheet data into detected fields',
     ],
     techStack: ['Next.js 15', 'ProseMirror', 'Supabase', 'Tailwind', 'Zod'],
     techDetails: [
       {
         name: 'Next.js 15',
         purpose:
-          'App Router and Server Actions for the document upload and processing pipeline',
+          'App Router for the document upload, saved-document APIs, and Lighthouse integration boundary',
       },
       {
         name: 'ProseMirror',
@@ -192,7 +192,7 @@ export const projects: Project[] = [
       {
         name: '@eigenpal/docx-js-editor',
         purpose:
-          'Server-side DOCX parsing and structured text extraction by paragraph and run',
+          'Browser editor for DOCX viewing, highlighting, and validated range-based replacements',
       },
       {
         name: 'Supabase',
@@ -213,11 +213,11 @@ export const projects: Project[] = [
     uniqueFeatures: [
       'ProseMirror workspace shows replacements inside the actual document — not a separate list view',
       'Pattern library covers municipal bond terminology: CUSIP, trustee, fiscal agent, bond counsel, escrow agent',
-      'Anonymous session model lets users demo the tool before creating an account',
-      'Change log is audit-ready — every confirmed replacement is tracked with the replacement value',
+      'Anonymous session model lets users try the tool before creating an account',
+      'Change log is audit-oriented — every confirmed replacement is tracked with the replacement value',
     ],
     architectureHighlights: [
-      'Server-side DOCX parsing pipeline — no client-side file processing means consistent extraction across browsers',
+      'Editor-native DOCX workflow with canonical text mapping and validated editor ranges',
       'ProseMirror schema extended with custom marks for variable highlighting and confirmation state',
       'Anonymous-first auth model using Supabase anonymous sessions that can be upgraded to full accounts',
       'Regex pattern registry is additive — new field patterns are added without code changes to the detection engine',
@@ -227,10 +227,10 @@ export const projects: Project[] = [
       'Law firm internal tools',
       'Document review workflows',
       'Compliance and audit tooling',
-      'AI-assisted document processing',
+      'Deterministic document processing',
     ],
     results:
-      'Reduces resolution document prep time from hours to under 15 minutes, with an audit-ready change log for every confirmed replacement.',
+      'Built a deterministic review workflow with typed detection categories, safety filters, conflict resolution, editor-range validation, saved-document support, and regression tests for parsing and mapping behavior. Designed to replace manual find-and-replace with structured review and an audit trail.',
     demoStatus: 'Private — Case Study Only',
     screenshots: [
       '/projects/muni-clerk-01-guest-upload.png',
@@ -240,28 +240,28 @@ export const projects: Project[] = [
       '/projects/muni-clerk-03-documents.png',
     ],
     featured: true,
-    productionGrade: true,
+    productionGrade: false,
   },
 
   {
     id: 'social-q',
     slug: 'social-q',
     title: 'Social Q',
-    subtitle: 'AI-Powered Social Communication Coach',
+    subtitle: 'AI-Assisted Communication Analysis Platform',
     category: 'Consumer',
     description:
-      'A mobile-first AI app that analyzes conversation context — typed messages, screenshots, or voice — and gives situation-aware communication guidance. A "Situation Intelligence" routing layer adjusts response depth to match context quality, producing advice that fits the actual moment rather than generic AI output.',
+      'A mobile-first communication-analysis product that helps users interpret conversations, assess message context, and choose safer next steps. Supports typed text and screenshot analysis, persistent conversation history, follow-up interactions, and personalized response strategies — with deterministic safety gates around the model pipeline.',
     challenge:
-      'Generic AI writing tools return the same output regardless of social context. Users needed something that understood conversation nuance — connection level, timing, tone, intent — and adjusted its analysis accordingly.',
+      'Generic AI writing tools return the same output regardless of social context. Users needed something that understood conversation nuance — connection level, timing, tone, intent — and adjusted its analysis accordingly, without inventing unsupported claims.',
     solution: [
-      'Situation Intelligence routing layer that classifies context depth before triggering full analysis',
-      'Omni-bouncer system routing inputs across clarification, analysis, and meta-reply modes',
-      'Per-intent accent theming — UI color shifts dynamically based on selected goal',
+      'Multi-stage AI workflow: deterministic routing, structured model output, analysis, interpretation, and send-strategy generation',
+      'Safety controls for ambiguity, unsupported relationship claims, message-direction errors, and hold / do-not-send recommendations',
       'Screenshot-to-text extraction for analyzing conversation images',
       'Voice input via Deepgram speech-to-text',
       'Threaded conversation history with optimistic UI updates',
-      'Send options panel with compact and detailed response variants',
-      'Supabase anonymous sessions for first-use without account creation',
+      'Anonymous-first identity with authenticated account migration and ownership scoping',
+      'Usage metering and entitlement logic with atomic quota operations and billing webhook handling',
+      'Evaluation tooling covering safety-specific failures, hold behavior, clarification quality, and hallucinated patterns',
     ],
     techStack: [
       'Next.js 16',
@@ -276,7 +276,7 @@ export const projects: Project[] = [
       {
         name: 'Next.js 16',
         purpose:
-          'App Router with Turbopack, Server Actions for AI pipeline orchestration',
+          'App Router with Turbopack; Server Actions for AI pipeline orchestration',
       },
       {
         name: 'OpenAI',
@@ -291,7 +291,7 @@ export const projects: Project[] = [
       {
         name: 'Supabase',
         purpose:
-          'Auth (including anonymous sessions), thread history, and user profile storage',
+          'Auth (including anonymous sessions), thread history, entitlements, and user profile storage',
       },
       {
         name: 'React 19',
@@ -314,7 +314,7 @@ export const projects: Project[] = [
       'Multi-level routing pipeline: context classification → bouncer → analysis → response generation',
       'OpenAI structured outputs enforce consistent JSON schema across all analysis modes',
       'Anonymous-first session model upgrades to authenticated profile on demand',
-      'Turbopack build pipeline for fast HMR during active feature development',
+      'Deterministic safety gates sit in front of generative stages so the model cannot invent unsupported facts unchecked',
     ],
     relevantFor: [
       'Consumer AI applications',
@@ -324,7 +324,7 @@ export const projects: Project[] = [
       'Voice-enabled applications',
     ],
     results:
-      'Live at socialq.chat with an active feature development roadmap. Demonstrates full consumer AI product architecture including multi-modal input, session management, and dynamic UI theming.',
+      'Built a multi-stage communication-analysis workflow with structured model outputs, persistent situations, user/anonymous identity handling, entitlement controls, screenshot parsing, and safety-focused evaluation tooling. Deployed at socialq.chat with continued feature development.',
     demoStatus: 'Live — Auth Required',
     screenshots: [
       '/projects/social-q-01-composer.png',
@@ -336,22 +336,22 @@ export const projects: Project[] = [
     ],
     demoUrl: 'https://socialq.chat',
     featured: true,
-    productionGrade: true,
+    productionGrade: false,
   },
 
   {
     id: 'immigration-app',
     slug: 'immigration-app',
     title: 'Immigration Letter Generator',
-    subtitle: 'AI Document Generation with Stripe Paywall and PDF Delivery',
+    subtitle: 'In Development — AI-Assisted Immigration Letter Workflow',
     category: 'Legal Tech',
     description:
-      'A SaaS app that generates immigration support letters using AI from a structured multi-step intake form. Users fill in their situation, preview a generated letter, pay via Stripe to unlock the full document, and receive a professionally formatted PDF by email.',
+      'An AI-assisted workflow that drafts immigration support letters from a structured multi-step intake form. The architecture covers preview, Stripe checkout, PDF formatting, and email delivery. Core paths are implemented; durable storage and operational hardening are still in progress.',
     challenge:
       "Immigration applicants need professionally worded support letters but cannot always afford attorney fees for every document. Generic templates don't account for individual circumstances. This automates the personalization layer while maintaining a clear disclaimer about tool vs. legal advice.",
     solution: [
       'Multi-step intake form with situation-specific questions per letter type',
-      'AI letter generation via OpenAI from structured form input',
+      'AI letter generation via OpenAI from structured form input (Claude fallback planned in service layer)',
       'Letter preview with paywall gating — see the format before paying to unlock',
       'Stripe Checkout for one-time purchase per letter',
       'PDF generation with jsPDF — formatted and print-ready output',
@@ -409,12 +409,12 @@ export const projects: Project[] = [
       'Paywall preview model — users see letter structure and quality before committing to purchase',
       'Per-letter-type form schemas — questions adapt based on which document the user needs',
       'jsPDF output produces a print-ready document, not raw text',
-      'Full Stripe + email loop: one payment triggers generation, formatting, and delivery automatically',
+      'Stripe + email loop designed so payment confirmation can trigger formatting and delivery',
     ],
     architectureHighlights: [
       'Webhook-confirmed Stripe access — letter unlock happens only after server-side payment verification',
       'Dynamic form schemas mean adding a new letter type requires only a schema definition, not new UI code',
-      'PDF generation runs client-side to avoid cold start latency on the generation step',
+      'Known next step: replace in-memory document storage with durable persistence for reliable serverless operation',
     ],
     relevantFor: [
       'Legal and document automation tools',
@@ -424,8 +424,8 @@ export const projects: Project[] = [
       'Law firm or legal services software',
     ],
     results:
-      'Live at immigration-app-sigma.vercel.app with a complete end-to-end purchase flow: AI generation, Stripe payment, PDF formatting, and email delivery.',
-    demoStatus: 'Live — Public',
+      'Foundation and purchase/generation architecture are in place (AI generation, Stripe checkout, PDF formatting, email delivery). Marked in development until durable storage and operational hardening are complete.',
+    demoStatus: 'In Development',
     screenshots: [
       '/projects/immigration-01-landing.png',
       '/projects/immigration-02-about-you.png',
@@ -445,10 +445,10 @@ export const projects: Project[] = [
     id: 'bond-generator',
     slug: 'bond-generator',
     title: 'Bond Generator',
-    subtitle: 'Municipal Bond Certificate Generation SaaS',
+    subtitle: 'Municipal Bond Certificate Generation Workflow',
     category: 'Fintech',
     description:
-      'A SaaS tool that generates official municipal bond certificates from uploaded DOCX templates, maturity schedules, and CUSIP data. Turns a multi-day manual assembly process into a structured, auditable workflow with subscription billing.',
+      'A tool that generates municipal bond certificates from uploaded DOCX templates, maturity schedules, and CUSIP data. Turns manual certificate assembly into a structured, auditable workflow, with Stripe subscription billing architecture available behind feature flags.',
     challenge:
       'Bond certificate generation requires merging complex financial data — maturity schedules, CUSIP numbers, interest rates, legal party names — into legal DOCX templates. One error invalidates the entire certificate series. Teams were doing this manually in Word, one certificate at a time.',
     solution: [
@@ -458,8 +458,8 @@ export const projects: Project[] = [
       'Editable data preview table before certificate generation',
       'Certificate assembly engine merging verified data into the template',
       'Draft save system for in-progress certificate jobs',
-      'Stripe subscription billing with trial period and webhook-confirmed access control',
-      'Trial expiration email notifications',
+      'Stripe subscription billing architecture with trial period and webhook-confirmed access control (feature-flagged)',
+      'Trial expiration email notifications (feature-flagged)',
     ],
     techStack: [
       'Next.js 15',
@@ -485,7 +485,7 @@ export const projects: Project[] = [
       {
         name: 'Stripe',
         purpose:
-          'Subscription management, trial periods, webhook-driven access control on certificate jobs',
+          'Subscription management, trial periods, and webhook-driven access control — gated by environment feature flags',
       },
       {
         name: 'xlsx',
@@ -516,11 +516,11 @@ export const projects: Project[] = [
     uniqueFeatures: [
       'Tag-based DOCX template system — any template can be onboarded without code changes to the generation engine',
       'Maturity schedule parser handles format variations from different bond counsel offices',
-      'Stripe webhook access gates — subscription lapses cut off certificate generation immediately',
+      'Stripe webhook access gates — designed so subscription lapses can cut off certificate generation',
       'Draft system preserves parsed data across sessions without re-uploading the schedule',
     ],
     architectureHighlights: [
-      'Webhook-first Stripe integration — access control decisions are made server-side from verified webhook events',
+      'Webhook-first Stripe integration — access control decisions are made server-side from verified webhook events when billing is enabled',
       'Template tag registry decouples template onboarding from the core generation engine',
       'Streaming generation response allows the UI to show progress on large bond series',
       'Supabase storage with per-user bucket policies for template and output isolation',
@@ -533,7 +533,7 @@ export const projects: Project[] = [
       'Data-to-document workflows',
     ],
     results:
-      'Live SaaS with active Stripe subscription billing. Handles certificate generation for bond series that previously required days of manual document assembly.',
+      'Launchable certificate-generation workflow with deterministic DOCX assembly, draft persistence, CI checks, and subscription billing architecture. Billing and trial surfaces are feature-flagged and not claimed as actively monetized here.',
     demoStatus: 'Live — Public',
     screenshots: [
       '/projects/bondgen.png',
@@ -547,7 +547,7 @@ export const projects: Project[] = [
     ],
     demoUrl: 'https://bond-generator.vercel.app',
     featured: true,
-    productionGrade: true,
+    productionGrade: false,
   },
 
   {
@@ -557,9 +557,9 @@ export const projects: Project[] = [
     subtitle: 'Modular Local Business Website System',
     category: 'Local Business',
     description:
-      'Three release-ready local service business websites — plumbing, landscaping, and tree service — built from a single reusable component base. Each site has industry-specific copy, service pages, lead capture forms, customer reviews, FAQ sections, and mobile-optimized call-to-action flows.',
+      'Three local service business website demos — plumbing, landscaping, and tree service — built from a single reusable component base. Each site has industry-specific copy, service pages, lead capture forms, customer reviews, FAQ sections, and mobile-optimized call-to-action flows.',
     challenge:
-      'Local service businesses need professional websites quickly at prices that make sense for a plumber or landscaper. Most agencies charge too much or deliver template-looking results. This proves production-quality local business sites can be built rapidly and replicated across verticals.',
+      'Local service businesses need professional websites quickly at prices that make sense for a plumber or landscaper. Most agencies charge too much or deliver template-looking results. This demonstrates how a shared component base can be adapted across verticals for client pitches.',
     solution: [
       'Three distinct industry themes: plumbing, landscaping, and tree service',
       'Hero sections with professional imagery and prominent mobile CTAs',
@@ -600,7 +600,7 @@ export const projects: Project[] = [
       'Mobile CTAs optimized for the actual behavior of local business customers: tap to call, tap to text',
     ],
     architectureHighlights: [
-      'Single component base with vertical-specific config objects — adding a new industry takes hours, not days',
+      'Single component base with vertical-specific config objects — adding a new industry reuses the same primitives',
       'Static generation for all public pages ensures near-instant load times without a server',
       'Form validation runs on both client (UX) and server (security) layers',
     ],
@@ -612,7 +612,7 @@ export const projects: Project[] = [
       'Fast-turnaround business sites',
     ],
     results:
-      'Live portfolio at home-service-demos.vercel.app. Used as proof-of-concept for client pitches in local business verticals. Demonstrates ability to deliver professional sites quickly across multiple industries.',
+      'Demo portfolio at home-service-demos.vercel.app. Used as proof-of-concept for client pitches in local business verticals — shows how a shared component system adapts across industries.',
     demoStatus: 'Live — Public',
     screenshots: [
       '/projects/home-service-01-hub.png',
@@ -635,7 +635,6 @@ export const projects: Project[] = [
 
 export const categories = [
   'All',
-  'Enterprise',
   'Fintech',
   'AI',
   'Consumer',

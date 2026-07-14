@@ -77,8 +77,8 @@ export const UpworkHeader = () => {
           </div>
 
           <p className="mt-8 text-xs text-text-muted">
-            AI helps us move faster. Human engineering review keeps the product
-            clean, maintainable, and release-ready.
+            AI-assisted implementation, paired with engineering review —
+            architecture checks, type safety, and verification before handoff.
           </p>
         </motion.div>
       </div>

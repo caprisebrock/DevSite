@@ -79,7 +79,7 @@ export const CTASection = () => {
                 Same-Week Starts
               </div>
               <div className="text-sm text-text-muted">
-                Ready when you are. Most projects start within days.
+                Ready when you are. We scope the first milestone after intake.
               </div>
             </div>
           </motion.div>

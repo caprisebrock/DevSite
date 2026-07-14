@@ -7,6 +7,7 @@ interface BrandLogoProps {
   showWordmark?: boolean
   wordmarkClassName?: string
   imageClassName?: string
+  imageWrapperClassName?: string
   className?: string
   priority?: boolean
 }
@@ -16,22 +17,30 @@ export const BrandLogo = ({
   showWordmark = true,
   wordmarkClassName,
   imageClassName,
+  imageWrapperClassName,
   className,
   priority = false,
 }: BrandLogoProps) => {
   return (
     <span className={cn('flex items-center gap-3 min-w-0', className)}>
-      <Image
-        src={SITE_LOGO}
-        alt={`${SITE_NAME} logo`}
-        width={size}
-        height={size}
-        priority={priority}
+      <span
         className={cn(
-          'shrink-0 rounded-[22%] h-16 w-16 md:h-[4.75rem] md:w-[4.75rem]',
-          imageClassName
+          'inline-flex shrink-0 rounded-[22%]',
+          imageWrapperClassName
         )}
-      />
+      >
+        <Image
+          src={SITE_LOGO}
+          alt={`${SITE_NAME} logo`}
+          width={size}
+          height={size}
+          priority={priority}
+          className={cn(
+            'shrink-0 rounded-[22%] h-16 w-16 md:h-[4.75rem] md:w-[4.75rem]',
+            imageClassName
+          )}
+        />
+      </span>
       {showWordmark && (
         <span
           className={cn(

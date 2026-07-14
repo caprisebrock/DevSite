@@ -13,6 +13,7 @@ import { MobileMenu } from './MobileMenu'
 const navLinks = [
   { href: '/', label: 'Portfolio' },
   { href: '/projects', label: 'Projects' },
+  { href: '/resume', label: 'Resume' },
   { href: '/how-we-build', label: 'How We Build' },
   { href: '/pricing', label: 'Pricing' },
 ]
@@ -105,18 +106,13 @@ export const Navigation = () => {
               'focus:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg-primary rounded-lg'
             )}
           >
-            <motion.div
-              className="transition-shadow duration-300 group-hover:shadow-glow rounded-[22%]"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <BrandLogo
-                showWordmark
-                priority
-                imageClassName="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
-                wordmarkClassName="group-hover:text-primary transition-colors duration-200 hidden sm:inline"
-              />
-            </motion.div>
+            <BrandLogo
+              showWordmark
+              priority
+              imageClassName="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16"
+              imageWrapperClassName="transition-all duration-300 group-hover:shadow-glow group-hover:scale-105 group-active:scale-95"
+              wordmarkClassName="group-hover:text-primary transition-colors duration-200 hidden sm:inline"
+            />
           </Link>
 
           <div

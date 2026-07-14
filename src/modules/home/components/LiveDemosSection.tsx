@@ -32,7 +32,7 @@ const demos = [
     icon: FileText,
     title: 'Bond Generator',
     description:
-      'Certificate generation SaaS demo. Upload a DOCX template, parse a maturity schedule, and generate formatted certificates with Stripe billing.',
+      'Municipal bond certificate generation. Upload a DOCX template, parse a maturity schedule, and generate certificates — with Stripe billing architecture available when enabled.',
     action: 'View Project',
     actionUrl: 'https://bond-generator.vercel.app',
     color: 'primary' as const,

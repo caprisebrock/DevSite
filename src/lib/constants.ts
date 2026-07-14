@@ -7,22 +7,26 @@
 export const SITE_NAME = 'Day One Devs'
 export const SITE_LOGO = '/dayonelogo-transparent.png'
 export const SITE_DESCRIPTION =
-  'Custom SaaS development, AI integration, and enterprise automation for $10k-50k projects.'
+  'Full-stack product engineering for workflow-heavy apps: AI systems, document automation, SaaS platforms, and codebase stabilization.'
 export const SITE_URL = 'https://dayonedevs.com'
 export const CONTACT_EMAIL = 'jah-amiel@muniflow.io'
 
+/** Display name for resume / hiring surfaces. */
+export const RESUME_NAME = 'Jahamiel Douglas'
+
 // Navigation links
 export const NAV_LINKS = [
-  { label: 'Home', href: '/' },
+  { label: 'Portfolio', href: '/' },
   { label: 'Projects', href: '/projects' },
-  { label: 'Capabilities', href: '/capabilities' },
+  { label: 'Resume', href: '/resume' },
+  { label: 'How We Build', href: '/how-we-build' },
+  { label: 'Pricing', href: '/pricing' },
 ] as const
 
-// Social links (update with real handles)
 export const SOCIAL_LINKS = {
-  linkedin: 'https://linkedin.com/in/',
-  github: 'https://github.com/',
-  twitter: 'https://twitter.com/',
+  linkedin: 'https://www.linkedin.com/in/jahamiel-douglas-a63b50343/',
+  github: 'https://github.com/JahacksV1',
+  twitter: '',
 } as const
 
 // Animation durations (in ms) - sync with ANIMATION_SYSTEM.md
